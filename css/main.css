@@ -1,0 +1,39 @@
+
+div#search_box {
+	display: table;
+}
+
+input[type='text'], input[type='password'], textarea {
+	display: block;
+	font-family: 'Arimo','Helvetica Neue',Helvetica,Arial,sans-serif;
+	font-size: 13px;
+	color: #4a4e5f;
+	background-color: #fff;
+	height: 33px;
+	border-radius: 3px;
+	border: 1px #d0d2d9 solid;
+	width: 100%;
+	padding: 0 6px;
+	box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.08);
+	border-top-color: #bfc2cb;
+}
+
+input[type='submit'] {
+	box-shadow: inset 0 1px 0 #fff;
+	color: #4a4e5f;
+	border-bottom-color: #b4b7c2;
+	background-image: -webkit-linear-gradient(bottom, #e1e2e7 0%, #f7f8f9 100%);
+	display: block;
+	padding: 0 12px;
+	line-height: 33px;
+	cursor: pointer;
+	border-radius: 3px;
+	border: 1px #d0d2d9 solid;
+	font-weight: bold;
+	text-shadow: 0 1px 0 #fff;
+}
+
+div#history, div#search_results {
+	border: 1px #d0d2d9 solid;
+	display: block;
+}
