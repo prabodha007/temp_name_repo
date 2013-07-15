@@ -44,23 +44,26 @@ class MainHandler(webapp2.RequestHandler):
 
         search_string = self.request.get('search_string')
 
-        self.response.write("Search results for " + search_string + "</br>")
+        if len(search_string) > 0:
 
-        params = {'search': search_string}
-        url = "http://data.nasa.gov/api/get_search_results/?" + \
-            urllib.urlencode(params)
+            self.response.write(
+                "Search results for " + search_string + "</br>")
 
-        try:
-            result = urllib2.urlopen(url)
-            response = result.read()
-            # self.response.write(response)
-            json_data = json.loads(response)
-            self.PrintJsonResult(json_data)
+            params = {'search': search_string}
+            url = "http://data.nasa.gov/api/get_search_results/?" + \
+                urllib.urlencode(params)
 
-            result.close()
+            try:
+                result = urllib2.urlopen(url)
+                response = result.read()
+                # self.response.write(response)
+                json_data = json.loads(response)
+                self.PrintJsonResult(json_data)
 
-        except urllib2.URLError, e:
-            self.response.write(e)
+                result.close()
+
+            except urllib2.URLError, e:
+                self.response.write(e)
 
         self.response.out.write("""
             </div>
